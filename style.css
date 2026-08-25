@@ -57,6 +57,15 @@ input:focus {
     border-color: #8d8d8d;
 }
 
+.toggle-password-btn {
+    background: transparent;
+    position: absolute;
+    bottom: 6px;
+    right: 8px;
+    border: none;
+    cursor: pointer;
+}
+
 span {
     visibility: hidden;
     position: absolute;
@@ -92,7 +101,7 @@ span {
     background-color: #6f5d47;
 }
 
-button:hover {
+.submit-btn:hover {
     background-color: #9f8070;
 }
 

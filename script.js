@@ -5,10 +5,12 @@ const email = document.getElementById("email");
 const password = document.getElementById("password");
 const confirmPassword = document.getElementById("confirmPassword")
 const submitButton = document.getElementById("submitButton");
+const togglePasswordBtn = document.getElementById("togglePasswordBtn");
+const toggleConfirmPasswordBtn = document.getElementById("toggleConfirmPasswordBtn");
 
 let isFormValid = false;
 
-// event listeners: input field and submit
+// event listeners: input field, submit, toggle password
 
 form.addEventListener("focusout", (e) => {
     e.preventDefault();
@@ -34,6 +36,24 @@ form.addEventListener("submit", (e) => {
             group.className = "form-group";
         });
     }
+});
+
+togglePasswordBtn.addEventListener("click", (e) => {
+    const isHidden = password.type === "password";
+    password.type = isHidden ? "text" : "password";
+    password.placeholder = isHidden ? "Password" : "*******";
+
+    const icon = document.getElementById("togglePwdIcon");
+    icon.src = isHidden ? "icons/eye.svg" : "icons/eye-slash.svg";
+});
+
+toggleConfirmPasswordBtn.addEventListener("click", (e) => {
+    const isHidden = confirmPassword.type === "password";
+    confirmPassword.type = isHidden ? "text" : "password";
+    confirmPassword.placeholder = isHidden ? "Confirm password" : "*******";
+
+    const icon = document.getElementById("toggleConfirmPwdIcon");
+    icon.src = isHidden ? "icons/eye.svg" : "icons/eye-slash.svg";
 });
 
 // function to validate form by calling check functions on each input
